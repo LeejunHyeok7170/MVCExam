@@ -1,6 +1,7 @@
 package com.demo.mvcexam.repository;
 
 import com.demo.mvcexam.entity.User;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
 import java.io.*;
@@ -16,8 +17,10 @@ public class UserRepository {
     private final Path DIRECTORY;
     private final String EXTENSION = ".ser";
 
-    public UserRepository(String fileDirectory) {
-        this.DIRECTORY = Paths.get(fileDirectory, "file-data-map", ReadStatus.class.getSimpleName());
+
+    public UserRepository() {
+
+        this.DIRECTORY = Paths.get("/var/www/uploads", "file-data-map");
         if (Files.notExists(DIRECTORY)) {
             try {
                 Files.createDirectories(DIRECTORY);

@@ -1,5 +1,7 @@
 package com.demo.mvcexam.controller;
 
+import com.demo.mvcexam.dto.PostCreateRequest;
+import com.demo.mvcexam.service.PostService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

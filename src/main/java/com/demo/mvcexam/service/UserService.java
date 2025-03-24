@@ -1,5 +1,6 @@
 package com.demo.mvcexam.service;
 
+import com.demo.mvcexam.JWT.JwtUtil;
 import com.demo.mvcexam.dto.LoginRequest;
 import com.demo.mvcexam.dto.UserRegisterRequest;
 import com.demo.mvcexam.entity.User;
@@ -47,7 +48,7 @@ public class UserService {
         }
 
         // JWT 토큰 생성 및 반환
-        return jwtUtil.generateToken(user.getId());
+        return new JwtUtil().generateToken(user.getId());
     }
 
     public boolean existsById(String userId) {

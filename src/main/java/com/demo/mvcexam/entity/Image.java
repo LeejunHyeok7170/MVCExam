@@ -32,4 +32,8 @@ public class Image {
 
     @OneToMany(mappedBy = "image", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<PostImage> postImages = new ArrayList<>();
+
+    public Image() {
+
+    }
 }

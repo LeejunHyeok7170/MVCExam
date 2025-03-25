@@ -19,6 +19,17 @@ public class Image {
     private Long size;
     private Instant uploadedAt = Instant.now();
 
+    public Image(UUID id, String originalName,
+                 String extension, String path,
+                 long size, Instant uploadedAt) {
+        this.id = id;
+        this.originalName = originalName;
+        this.extension = extension;
+        this.path = path;
+        this.size = size;
+        this.uploadedAt = uploadedAt;
+    }
+
     @OneToMany(mappedBy = "image", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<PostImage> postImages = new ArrayList<>();
 }
